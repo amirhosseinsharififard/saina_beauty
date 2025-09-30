@@ -1,0 +1,5 @@
+Mail Jet :
+
+API-Schlüssel: e94f65793f78c6931ef747cd176b69a4
+
+Geheimer Schlüssel : 6d1603cb9e5945685682962c21b9d3fc
