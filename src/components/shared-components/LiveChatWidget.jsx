@@ -1,8 +1,8 @@
 import { useState } from "react";
-import { ChatIcon } from "./Icons";
-import { API_ENDPOINTS } from "../../constants/data";
+import { ChatIcon } from "./IconComponents";
+import { API_ENDPOINTS } from "../../constants/appData";
 
-const ChatWidget = () => {
+const LiveChatWidget = () => {
   const [chatMessage, setChatMessage] = useState("");
   const [chatMessages, setChatMessages] = useState([]);
   const [showChat, setShowChat] = useState(false);
@@ -78,4 +78,4 @@ const ChatWidget = () => {
   );
 };
 
-export default ChatWidget;
+export default LiveChatWidget;

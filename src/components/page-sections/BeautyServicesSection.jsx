@@ -1,5 +1,5 @@
-import { beautyServices } from "../../constants/data";
-import { iconMap } from "../ui/Icons";
+import { beautyServices } from "../../constants/appData";
+import { iconMap } from "../shared-components/IconComponents";
 
 const BeautyServicesSection = () => {
   return (

@@ -1,4 +1,9 @@
-const BookingStep5 = ({ formData, handleChange, handleSubmit, prevStep }) => {
+const ConfirmationStep = ({
+  formData,
+  handleChange,
+  handleSubmit,
+  prevStep,
+}) => {
   return (
     <div>
       <h3 className="text-3xl font-bold text-white mb-8 text-center">
@@ -56,4 +61,4 @@ const BookingStep5 = ({ formData, handleChange, handleSubmit, prevStep }) => {
   );
 };
 
-export default BookingStep5;
+export default ConfirmationStep;

@@ -1,5 +1,5 @@
-import { dentalServices } from "../../constants/data";
-import { ClinicIcon } from "../ui/Icons";
+import { dentalServices } from "../../constants/appData";
+import { ClinicIcon } from "../shared-components/IconComponents";
 
 const DentalServicesSection = () => {
   return (

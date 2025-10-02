@@ -3,10 +3,10 @@ import {
   FacebookIcon,
   TiktokIcon,
   WhatsappIcon,
-} from "../ui/Icons";
-import { SOCIAL_LINKS } from "../../constants/data";
+} from "../shared-components/IconComponents";
+import { SOCIAL_LINKS } from "../../constants/appData";
 
-const Footer = () => {
+const FooterSection = () => {
   return (
     <footer className="bg-pink-600 text-white py-10 px-4">
       <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 text-sm">
@@ -65,4 +65,4 @@ const Footer = () => {
   );
 };
 
-export default Footer;
+export default FooterSection;

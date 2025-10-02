@@ -1,6 +1,6 @@
-import { timeSlots } from "../../constants/data";
+import { timeSlots } from "../../constants/appData";
 
-const BookingStep3 = ({
+const DateTimeSelectionStep = ({
   formData,
   handleChange,
   setFormData,
@@ -79,4 +79,4 @@ const BookingStep3 = ({
   );
 };
 
-export default BookingStep3;
+export default DateTimeSelectionStep;

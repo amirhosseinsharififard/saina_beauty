@@ -1,9 +1,9 @@
-import { useBookingForm } from "../../hooks/useBookingForm";
-import BookingStep1 from "../forms/BookingStep1";
-import BookingStep2 from "../forms/BookingStep2";
-import BookingStep3 from "../forms/BookingStep3";
-import BookingStep4 from "../forms/BookingStep4";
-import BookingStep5 from "../forms/BookingStep5";
+import { useBookingFormState } from "../../hooks/useBookingFormState";
+import NameInputStep from "../booking-forms/NameInputStep";
+import ServiceSelectionStep from "../booking-forms/ServiceSelectionStep";
+import DateTimeSelectionStep from "../booking-forms/DateTimeSelectionStep";
+import ContactInputStep from "../booking-forms/ContactInputStep";
+import ConfirmationStep from "../booking-forms/ConfirmationStep";
 
 const BookingSection = () => {
   const {
@@ -16,13 +16,13 @@ const BookingSection = () => {
     handleSubmit,
     nextStep,
     prevStep,
-  } = useBookingForm();
+  } = useBookingFormState();
 
   const renderStep = () => {
     switch (bookingStep) {
       case 1:
         return (
-          <BookingStep1
+          <NameInputStep
             formData={formData}
             handleChange={handleChange}
             nextStep={nextStep}
@@ -30,7 +30,7 @@ const BookingSection = () => {
         );
       case 2:
         return (
-          <BookingStep2
+          <ServiceSelectionStep
             formData={formData}
             setFormData={setFormData}
             nextStep={nextStep}
@@ -39,7 +39,7 @@ const BookingSection = () => {
         );
       case 3:
         return (
-          <BookingStep3
+          <DateTimeSelectionStep
             formData={formData}
             handleChange={handleChange}
             setFormData={setFormData}
@@ -49,7 +49,7 @@ const BookingSection = () => {
         );
       case 4:
         return (
-          <BookingStep4
+          <ContactInputStep
             formData={formData}
             handleChange={handleChange}
             setFormData={setFormData}
@@ -61,7 +61,7 @@ const BookingSection = () => {
         );
       case 5:
         return (
-          <BookingStep5
+          <ConfirmationStep
             formData={formData}
             handleChange={handleChange}
             handleSubmit={handleSubmit}

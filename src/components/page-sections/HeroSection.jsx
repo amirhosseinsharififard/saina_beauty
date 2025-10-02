@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
-import { heroImages } from "../../constants/data";
-import { WhatsappIcon } from "../ui/Icons";
+import { heroImages } from "../../constants/appData";
+import { WhatsappIcon } from "../shared-components/IconComponents";
 
 const HeroSection = () => {
   const [currentSlide, setCurrentSlide] = useState(0);

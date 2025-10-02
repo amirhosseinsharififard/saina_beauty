@@ -1,6 +1,6 @@
-import { countries } from "../../constants/data";
+import { countries } from "../../constants/appData";
 
-const BookingStep4 = ({
+const ContactInputStep = ({
   formData,
   handleChange,
   setFormData,
@@ -100,4 +100,4 @@ const BookingStep4 = ({
   );
 };
 
-export default BookingStep4;
+export default ContactInputStep;

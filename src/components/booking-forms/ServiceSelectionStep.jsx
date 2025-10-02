@@ -1,7 +1,12 @@
-import { beautyServices, dentalServices } from "../../constants/data";
-import { SyringeIcon, ClinicIcon } from "../ui/Icons";
+import { beautyServices, dentalServices } from "../../constants/appData";
+import { SyringeIcon, ClinicIcon } from "../shared-components/IconComponents";
 
-const BookingStep2 = ({ formData, setFormData, nextStep, prevStep }) => {
+const ServiceSelectionStep = ({
+  formData,
+  setFormData,
+  nextStep,
+  prevStep,
+}) => {
   return (
     <div>
       <h3 className="text-3xl font-bold text-white mb-8 text-center">
@@ -83,4 +88,4 @@ const BookingStep2 = ({ formData, setFormData, nextStep, prevStep }) => {
   );
 };
 
-export default BookingStep2;
+export default ServiceSelectionStep;
