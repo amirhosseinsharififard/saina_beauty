@@ -2,7 +2,9 @@
 const NameInputStep = ({ formData, handleChange, nextStep }) => {
   return (
     <div className="text-center">
-      <h3 className="text-3xl font-bold text-white mb-8">What's your name?</h3>
+      <h3 className="text-3xl font-bold text-white mb-8">
+        What&apos;s your name?
+      </h3>
       <input
         name="name"
         type="text"
