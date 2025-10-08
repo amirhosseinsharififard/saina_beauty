@@ -1,3 +1,4 @@
+"use client";
 import { timeSlots } from "../../constants/appData";
 
 const DateTimeSelectionStep = ({

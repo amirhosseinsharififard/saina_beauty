@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 const AboutSection = () => {
   return (
     <section className="py-20 px-4 bg-white">
@@ -20,10 +22,12 @@ const AboutSection = () => {
             </ul>
           </div>
         </div>
-        <img
-          src="./images/about.jpg"
+        <Image
+          src="/images/about.jpg"
           alt="Saina"
-          className="w-[340px] h-[440px] object-cover rounded-[100px] shadow-2xl hover:scale-105 transition duration-500"
+          width={340}
+          height={440}
+          className="object-cover rounded-[100px] shadow-2xl hover:scale-105 transition duration-500"
         />
       </div>
     </section>

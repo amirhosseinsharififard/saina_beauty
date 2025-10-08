@@ -1,3 +1,4 @@
+"use client";
 import { countries } from "../../constants/appData";
 
 const ContactInputStep = ({

@@ -1,3 +1,4 @@
+"use client";
 import { useBookingFormState } from "../../hooks/useBookingFormState";
 import NameInputStep from "../booking-forms/NameInputStep";
 import ServiceSelectionStep from "../booking-forms/ServiceSelectionStep";

@@ -1,3 +1,4 @@
+"use client";
 import { beautyServices, dentalServices } from "../../constants/appData";
 import { SyringeIcon, ClinicIcon } from "../shared-components/IconComponents";
 

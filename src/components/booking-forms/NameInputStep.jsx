@@ -1,3 +1,4 @@
+"use client";
 const NameInputStep = ({ formData, handleChange, nextStep }) => {
   return (
     <div className="text-center">

@@ -1,3 +1,4 @@
+"use client";
 import { useState } from "react";
 import { ChatIcon } from "./IconComponents";
 import { API_ENDPOINTS } from "../../constants/appData";

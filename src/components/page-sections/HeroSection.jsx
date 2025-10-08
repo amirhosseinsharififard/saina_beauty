@@ -1,4 +1,6 @@
+"use client";
 import { useState, useEffect } from "react";
+import Image from "next/image";
 import { heroImages } from "../../constants/appData";
 import { WhatsappIcon } from "../shared-components/IconComponents";
 
@@ -14,13 +16,15 @@ const HeroSection = () => {
 
   return (
     <section className="relative h-[90vh] overflow-hidden">
-      <img
+      <Image
         src={heroImages[currentSlide]}
         alt="Hero"
-        className="absolute inset-0 w-full h-full object-cover transition duration-1000"
+        fill
+        className="object-cover transition duration-1000"
+        priority
       />
       <div className="absolute top-4 left-4 z-20">
-        <img src="./images/logo.png" alt="Logo" className="h-16" />
+        <Image src="/images/logo.png" alt="Logo" width={64} height={64} />
       </div>
       <div className="relative z-10 h-full bg-black/30 flex flex-col items-center justify-center gap-6 text-white text-center px-4">
         <h1 className="text-4xl sm:text-5xl font-bold">
