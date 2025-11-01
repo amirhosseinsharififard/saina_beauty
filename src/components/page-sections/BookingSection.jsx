@@ -26,6 +26,7 @@ const BookingSection = () => {
           <NameInputStep
             formData={formData}
             handleChange={handleChange}
+            setFormData={setFormData}
             nextStep={nextStep}
           />
         );
