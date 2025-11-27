@@ -29,30 +29,27 @@ export const useBookingFormState = () => {
       alert("Bitte füllen Sie alle Pflichtfelder aus.");
       return;
     }
-    fetch(
-      "https://n8n.sainabeauty.com/webhook-test/364d3517-d70b-4565-b66f-ac8df1fa8a63",
-      {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          ...formData,
-          fullContact: `${formData.countryCode}${formData.contact}`,
-        }),
-      }
-    );
+    // fetch("https://n8n.sainabeauty.com/webhook-test/booking", {
+    //   method: "POST",
+    //   headers: { "Content-Type": "application/json" },
+    //   body: JSON.stringify({
+    //     ...formData,
+    //     fullContact: `${formData.countryCode}${formData.contact}`,
+    //   }),
+    // });
 
-    fetch(API_ENDPOINTS.BOOKING, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        ...formData,
-        fullContact: `${formData.countryCode}${formData.contact}`,
-      }),
-    }).then((res) =>
-      res.ok
-        ? alert("Thanks! We received your booking 🎉")
-        : alert("Oops! Something went wrong.")
-    );
+    // fetch(API_ENDPOINTS.BOOKING, {
+    //   method: "POST",
+    //   headers: { "Content-Type": "application/json" },
+    //   body: JSON.stringify({
+    //     ...formData,
+    //     fullContact: `${formData.countryCode}${formData.contact}`,
+    //   }),
+    // }).then((res) =>
+    //   res.ok
+    //     ? alert("Thanks! We received your booking 🎉")
+    //     : alert("Oops! Something went wrong.")
+    // );
   };
 
   const nextStep = () => {
