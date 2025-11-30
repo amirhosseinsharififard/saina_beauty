@@ -29,14 +29,14 @@ export const useBookingFormState = () => {
       alert("Bitte füllen Sie alle Pflichtfelder aus.");
       return;
     }
-    // fetch("https://n8n.sainabeauty.com/webhook-test/booking", {
-    //   method: "POST",
-    //   headers: { "Content-Type": "application/json" },
-    //   body: JSON.stringify({
-    //     ...formData,
-    //     fullContact: `${formData.countryCode}${formData.contact}`,
-    //   }),
-    // });
+    fetch("https://n8n.sainabeauty.com/webhook-test/booking", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        ...formData,
+        fullContact: `${formData.countryCode}${formData.contact}`,
+      }),
+    });
 
     // fetch(API_ENDPOINTS.BOOKING, {
     //   method: "POST",
