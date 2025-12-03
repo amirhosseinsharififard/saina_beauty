@@ -11,7 +11,7 @@ export const useBookingFormState = () => {
     comment: "",
     countryCode: "+90",
   });
-  const [bookingStep, setBookingStep] = useState(1);
+  const [bookingStep, setBookingStep] = useState(4);
   const [showCountryDropdown, setShowCountryDropdown] = useState(false);
 
   const handleChange = (e) => {
