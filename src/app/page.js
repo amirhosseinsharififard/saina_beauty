@@ -9,10 +9,10 @@ import LiveChatWidget from "../components/shared-components/LiveChatWidget";
 export default function Home() {
   return (
     <div className="font-sans text-gray-800 bg-white">
-      {/* <HeroSection />
+      <HeroSection />
       <AboutSection />
       <BeautyServicesSection />
-      <DentalServicesSection /> */}
+      <DentalServicesSection />
       <BookingSection />
       <FooterSection />
       <LiveChatWidget />

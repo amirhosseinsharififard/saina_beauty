@@ -118,12 +118,11 @@ export const useBookingFormState = () => {
 
   const handleSubmit = async () => {
     if (!validateForm()) {
-      // Validate before submission
       alert("Please fill in all required fields correctly.");
       return;
     }
 
-    fetch("https://n8n.sainabeauty.com/webhook-test/booking", {
+    fetch("https://n8n.sainabeauty.com/webhook/booking", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
@@ -131,19 +130,6 @@ export const useBookingFormState = () => {
         fullContact: `${formData.countryCode}${formData.phoneNumber}`,
       }),
     });
-
-    // fetch(API_ENDPOINTS.BOOKING, {
-    //   method: "POST",
-    //   headers: { "Content-Type": "application/json" },
-    //   body: JSON.stringify({
-    //     ...formData,
-    //     fullContact: `${formData.countryCode}${formData.contact}`,\
-    //   }),
-    // }).then((res) =>
-    //   res.ok
-    //     ? alert("Thanks! We received your booking 🎉")
-    //     : alert("Oops! Something went wrong.")
-    // );
   };
 
   const nextStep = () => {
