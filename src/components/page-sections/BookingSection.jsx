@@ -14,6 +14,8 @@ const BookingSection = () => {
     showCountryDropdown,
     setShowCountryDropdown,
     handleChange,
+    handleEmailChange,
+    handlePhoneNumberChange,
     handleSubmit,
     nextStep,
     prevStep,
@@ -54,6 +56,8 @@ const BookingSection = () => {
           <ContactInputStep
             formData={formData}
             handleChange={handleChange}
+            handleEmailChange={handleEmailChange}
+            handlePhoneNumberChange={handlePhoneNumberChange}
             setFormData={setFormData}
             showCountryDropdown={showCountryDropdown}
             setShowCountryDropdown={setShowCountryDropdown}
