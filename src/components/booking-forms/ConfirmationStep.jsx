@@ -17,20 +17,30 @@ const ConfirmationStep = ({
         </h4>
         <div className="space-y-2 text-pink-200">
           <div>
-            <span className="font-medium">Name:</span> {formData.name}
+            <span className="font-medium">Name:</span>{" "}
+            <span className="font-semibold text-white">{formData.name}</span>
           </div>
           <div>
-            <span className="font-medium">Service:</span> {formData.service}
+            <span className="font-medium">Service:</span>{" "}
+            <span className="font-semibold text-white">{formData.service}</span>
           </div>
           <div>
-            <span className="font-medium">Date:</span> {formData.date}
+            <span className="font-medium">Date:</span>{" "}
+            <span className="font-semibold text-white">{formData.date}</span>
           </div>
           <div>
-            <span className="font-medium">Time:</span> {formData.time}
+            <span className="font-medium">Time:</span>{" "}
+            <span className="font-semibold text-white">{formData.time}</span>
           </div>
           <div>
-            <span className="font-medium">Contact:</span> {formData.countryCode}{" "}
-            {formData.contact}
+            <span className="font-medium">Email:</span>{" "}
+            <span className="font-semibold text-white">{formData.email}</span>
+          </div>
+          <div>
+            <span className="font-medium">Phone Number:</span>{" "}
+            <span className="font-semibold text-white">
+              {formData.countryCode} {formData.phoneNumber}
+            </span>
           </div>
         </div>
       </div>

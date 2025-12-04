@@ -1,4 +1,3 @@
-"use client";
 import { useState } from "react";
 import { API_ENDPOINTS } from "../constants/appData";
 
