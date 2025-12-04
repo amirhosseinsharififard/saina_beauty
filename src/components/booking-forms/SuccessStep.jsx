@@ -4,7 +4,7 @@ import React from "react";
 
 const SuccessStep = ({ formData, resetForm, goToHome }) => {
   const salonEmail = "info@sainabeauty.com";
-  const salonPhoneNumber = "+90 5XX XXX XX XX";
+  const salonPhoneNumber = "+90 5XX XXX XX XX"; // مثال شماره تلفن
 
   return (
     <div className="text-center p-6 sm:p-8 md:p-10 lg:p-12">
@@ -66,17 +66,17 @@ const SuccessStep = ({ formData, resetForm, goToHome }) => {
         </p>
       </div>
 
-      {/* دکمه‌ها */}
+      {/* دکمه‌ها - با استایل‌های مشابه دکمه‌های فرم */}
       <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in-up delay-500">
         <button
-          onClick={goToHome}
-          className="px-10 py-4 bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 text-white font-bold text-lg rounded-2xl transition-all duration-300 transform hover:scale-105 hover:shadow-2xl"
+          onClick={goToHome} // اکشن اصلی
+          className="px-12 py-3 rounded-2xl font-bold transition-all duration-300 bg-gradient-to-r from-pink-500 to-rose-500 hover:from-pink-600 hover:to-rose-600 text-white transform hover:scale-105 hover:shadow-2xl"
         >
           ← Back to Home
         </button>
         <button
-          onClick={resetForm}
-          className="px-10 py-4 bg-white/20 text-white rounded-2xl hover:bg-white/30 transition-all duration-300 transform hover:scale-105"
+          onClick={resetForm} // اکشن ثانویه
+          className="px-8 py-3 bg-white/20 text-white rounded-2xl hover:bg-white/30 transition-all duration-300 transform hover:scale-105"
         >
           Book New Appointment
         </button>

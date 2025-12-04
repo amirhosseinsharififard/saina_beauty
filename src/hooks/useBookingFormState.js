@@ -1,3 +1,5 @@
+// src/hooks/useBookingFormState.js
+"use client";
 import { useState } from "react";
 import { API_ENDPOINTS } from "../constants/appData";
 
@@ -12,6 +14,18 @@ export const useBookingFormState = () => {
     comment: "",
     countryCode: "TR", // Changed default to "TR" as per ContactInputStep example
   });
+
+  const initialFormData = {
+    // اضافه شده برای ریست کردن آسان فرم
+    name: "",
+    service: "",
+    date: "",
+    time: "",
+    email: "",
+    phoneNumber: "",
+    comment: "",
+    countryCode: "TR",
+  };
   const [bookingStep, setBookingStep] = useState(1);
   const [showCountryDropdown, setShowCountryDropdown] = useState(false);
   const [errors, setErrors] = useState({}); // New state for validation errors
@@ -85,15 +99,13 @@ export const useBookingFormState = () => {
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((prevFormData) => ({ ...prevFormData, [name]: value }));
+    // console.log(`[useBookingFormState] handleChange: ${name} = ${value}, new formData:`, { ...formData, [name]: value }); // خط console.log قبلی برای دیباگ
     validateField(name, value);
   };
 
   const handleEmailChange = (e) => {
     const { name, value } = e.target;
-    setFormData((prev) => {
-      console.log("Updating formData (email):", { ...prev, [name]: value });
-      return { ...prev, [name]: value };
-    });
+    setFormData({ ...formData, [name]: value });
     validateField(name, value); // Validate on change
   };
 
@@ -118,23 +130,35 @@ export const useBookingFormState = () => {
 
   const handleSubmit = async () => {
     if (!validateForm()) {
+      // Validate before submission
       alert("Please fill in all required fields correctly.");
       return;
     }
 
-    console.log("SEND EMAIL");
-    // fetch("https://n8n.sainabeauty.com/webhook/booking", {
+    fetch("https://n8n.sainabeauty.com/webhook-test/booking", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        ...formData,
+        fullContact: `${formData.countryCode}${formData.phoneNumber}`,
+      }),
+    });
+
+    // fetch(API_ENDPOINTS.BOOKING, {
     //   method: "POST",
     //   headers: { "Content-Type": "application/json" },
     //   body: JSON.stringify({
     //     ...formData,
-    //     fullContact: `${formData.countryCode}${formData.phoneNumber}`,
+    //     fullContact: `${formData.countryCode}${formData.contact}`,\
     //   }),
-    // });
+    // }).then((res) =>
+    //   res.ok
+    //     ? alert("Thanks! We received your booking 🎉")
+    //     : alert("Oops! Something went wrong.")
+    // );
   };
 
   const nextStep = () => {
-    // We should validate fields relevant to the current step before moving on
     let currentStepIsValid = true;
     if (bookingStep === 1) {
       currentStepIsValid = validateField("name", formData.name);
@@ -162,10 +186,10 @@ export const useBookingFormState = () => {
         formData.email.trim() &&
         formData.phoneNumber.trim()
       ) {
-        setBookingStep(5);
+        setBookingStep(5); // کاربر را مستقیماً به SuccessStep (مرحله 5 جدید) می‌فرستد.
       }
     } else {
-      alert("Please enter the information for this step correctly."); // Inform user about errors in current step
+      alert("Please enter the information for this step correctly.");
     }
   };
 
@@ -173,6 +197,24 @@ export const useBookingFormState = () => {
     if (bookingStep > 1) {
       setBookingStep(bookingStep - 1);
     }
+  };
+
+  // تابع resetForm برای برگرداندن فرم به حالت اولیه و رفتن به مرحله اول
+  const resetForm = () => {
+    setFormData(initialFormData); // بازگرداندن formData به حالت اولیه
+    setBookingStep(1); // رفتن به مرحله اول
+    setErrors({}); // پاک کردن خطاها
+    setShowCountryDropdown(false); // بستن منوی کشویی کشور
+  };
+
+  // تابع goToHome برای اسکرول کردن به بالای صفحه (یا ناوبری به صفحه اصلی در Next.js)
+  const goToHome = () => {
+    // اسکرول کردن صفحه به بالا
+    window.scrollTo({ top: 0, behavior: "smooth" });
+    // اگر در یک محیط Next.js هستید و می‌خواهید به صفحه اصلی خاصی بروید، می‌توانید از useRouter استفاده کنید:
+    // import { useRouter } from 'next/navigation'; // باید در بالای فایل import شود
+    // const router = useRouter();
+    // router.push('/'); // مثال: رفتن به صفحه اصلی
   };
 
   return {
@@ -191,5 +233,7 @@ export const useBookingFormState = () => {
     prevStep,
     errors, // Expose errors state
     validateField, // Expose validateField for onBlur events in components
+    resetForm, // Expose resetForm
+    goToHome, // Expose goToHome
   };
 };
