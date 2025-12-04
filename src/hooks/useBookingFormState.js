@@ -122,14 +122,15 @@ export const useBookingFormState = () => {
       return;
     }
 
-    fetch("https://n8n.sainabeauty.com/webhook/booking", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        ...formData,
-        fullContact: `${formData.countryCode}${formData.phoneNumber}`,
-      }),
-    });
+    console.log("SEND EMAIL");
+    // fetch("https://n8n.sainabeauty.com/webhook/booking", {
+    //   method: "POST",
+    //   headers: { "Content-Type": "application/json" },
+    //   body: JSON.stringify({
+    //     ...formData,
+    //     fullContact: `${formData.countryCode}${formData.phoneNumber}`,
+    //   }),
+    // });
   };
 
   const nextStep = () => {

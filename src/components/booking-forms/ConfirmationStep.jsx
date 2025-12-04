@@ -1,3 +1,4 @@
+// src/components/booking-forms/ConfirmationStep.jsx
 "use client";
 const ConfirmationStep = ({
   formData,

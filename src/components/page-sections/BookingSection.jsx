@@ -1,3 +1,4 @@
+// src/components/page-sections/BookingSection.jsx
 "use client";
 import { useBookingFormState } from "../../hooks/useBookingFormState";
 import NameInputStep from "../booking-forms/NameInputStep";
@@ -5,6 +6,7 @@ import ServiceSelectionStep from "../booking-forms/ServiceSelectionStep";
 import DateTimeSelectionStep from "../booking-forms/DateTimeSelectionStep";
 import ContactInputStep from "../booking-forms/ContactInputStep";
 import ConfirmationStep from "../booking-forms/ConfirmationStep";
+import SuccessStep from "../booking-forms/SuccessStep"; // Import SuccessStep
 
 const BookingSection = () => {
   const {
@@ -19,6 +21,8 @@ const BookingSection = () => {
     handleSubmit,
     nextStep,
     prevStep,
+    resetForm, // Get resetForm from the hook
+    goToHome, // Get goToHome from the hook
   } = useBookingFormState();
 
   const renderStep = () => {
@@ -54,7 +58,7 @@ const BookingSection = () => {
       case 4:
         return (
           <ContactInputStep
-            formData={formData}
+            formData={formData} // This formData prop will be ignored after the fix for ContactInputStep
             handleChange={handleChange}
             handleEmailChange={handleEmailChange}
             handlePhoneNumberChange={handlePhoneNumberChange}
@@ -65,13 +69,23 @@ const BookingSection = () => {
             prevStep={prevStep}
           />
         );
-      case 5:
+      // case 5:
+      //   return (
+      //     <ConfirmationStep
+      //       formData={formData}
+      //       handleChange={handleChange}
+      //       handleSubmit={handleSubmit}
+      //       handleEmailChange={handleEmailChange}
+      //       handlePhoneNumberChange={handlePhoneNumberChange}
+      //       prevStep={prevStep}
+      //     />
+      //   );
+      case 5: // Assuming ConfirmationStep is step 5, SuccessStep will be step 6
         return (
-          <ConfirmationStep
+          <SuccessStep
             formData={formData}
-            handleChange={handleChange}
-            handleSubmit={handleSubmit}
-            prevStep={prevStep}
+            resetForm={resetForm}
+            goToHome={goToHome}
           />
         );
       default:
@@ -95,7 +109,8 @@ const BookingSection = () => {
           <h2 className="text-5xl font-bold bg-gradient-to-r from-pink-200 to-white bg-clip-text text-transparent mb-4">
             ✨ Book Your Transformation
           </h2>
-          <p className="text-pink-100 text-xl">Step {bookingStep} of 5</p>
+          <p className="text-pink-100 text-xl">Step {bookingStep} of 6</p>{" "}
+          {/* Update total steps */}
         </div>
 
         <div className="mb-12">
@@ -116,7 +131,7 @@ const BookingSection = () => {
           <div className="w-full bg-white/20 rounded-full h-2">
             <div
               className="bg-gradient-to-r from-pink-500 to-rose-500 h-2 rounded-full transition-all duration-500"
-              style={{ width: `${(bookingStep / 5) * 100}%` }}
+              style={{ width: `${(bookingStep / 6) * 100}%` }}
             ></div>
           </div>
         </div>
