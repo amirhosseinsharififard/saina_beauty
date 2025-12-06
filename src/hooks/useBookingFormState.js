@@ -144,18 +144,18 @@ export const useBookingFormState = () => {
       }),
     });
 
-    // fetch(API_ENDPOINTS.BOOKING, {
-    //   method: "POST",
-    //   headers: { "Content-Type": "application/json" },
-    //   body: JSON.stringify({
-    //     ...formData,
-    //     fullContact: `${formData.countryCode}${formData.contact}`,\
-    //   }),
-    // }).then((res) =>
-    //   res.ok
-    //     ? alert("Thanks! We received your booking 🎉")
-    //     : alert("Oops! Something went wrong.")
-    // );
+    fetch(API_ENDPOINTS.BOOKING, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        ...formData,
+        fullContact: `${formData.countryCode}${formData.contact}`,
+      }),
+    }).then((res) =>
+      res.ok
+        ? alert("Thanks! We received your booking 🎉")
+        : alert("Oops! Something went wrong.")
+    );
   };
 
   const nextStep = () => {
