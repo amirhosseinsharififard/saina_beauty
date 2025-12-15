@@ -149,7 +149,6 @@ export const useBookingFormState = () => {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
         ...formData,
-        fullContact: `${formData.countryCode}${formData.contact}`,
       }),
     }).then((res) =>
       res.ok
