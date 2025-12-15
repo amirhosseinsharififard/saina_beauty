@@ -14,7 +14,7 @@ const SuccessStep = ({ formData, resetForm, goToHome }) => {
       <p className="text-lg text-white mb-8 animate-fade-in-up delay-100">
         Your appointment has been successfully booked.
         <br />
-        We've sent a confirmation to your email.
+        We&apos;ve sent a confirmation to your email.
       </p>
 
       {/* بخش خلاصه اطلاعات کاربر */}
